@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt')
 const saltRounds = 10
 
 const User = require('../models/User.model')
-const Transaction = require('../models/Transaction.model')
+const Note = require('../models/Note.model')
 const mongoose = require('mongoose')
 
 router.route('/signup')
