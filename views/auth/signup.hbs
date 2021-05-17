@@ -1,0 +1,29 @@
+<div id="signup" class="form-container">
+  <h2>Sigun Up</h2>
+
+  {{#if errorMessage}}
+    <div class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+  {{/if}}
+
+  <form action="/signup" method="POST">
+    <div class="mb-3">
+      <label for="input-name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="input-name" name="name" placeholder="John">
+    </div>
+    <div class="mb-3">
+      <label for="input-lname" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="input-lname" name="lastName" placeholder="Wick">
+    </div>
+    <div class="mb-3">
+      <label for="input-email" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="input-email" name="email" placeholder="example@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="input-password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="input-password" name="password" placeholder="••••••••" data-bs-toggle="tooltip" title="It should contain at leas 8 charcaters">
+    </div>
+    <button type="submit" class="btn btn-secondary rounded-0" >Create Account</button>
+  </form>
+</div>
