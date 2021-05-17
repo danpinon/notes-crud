@@ -6,7 +6,11 @@ const userSchema = new Schema(
     refUser: {
       type: Schema.Types.ObjectId, ref: "User"
     },
-    title: String,
+    title: {
+      type: String,
+      trim: true,
+      required: [true, 'Title is required.']
+    },
     content: String
   },
   {
