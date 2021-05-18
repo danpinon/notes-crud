@@ -14,8 +14,12 @@ router.route('/main-table')
   })
   .post((req, res, next) => {
     const { title, content, status} = req.body
+
+    if(status =='toDo'){
+      const toDoStatus = true
+    }
     console.log('req.body:', req.body)
-    Note.create({title: "new note", content: "you can start writing here", status})
+    Note.create({title: "new note", content: "you can start writing here", status, toDoStatus})
     .then(() => {
       console.log('note created succesfully')
       res.redirect('/main-table')
