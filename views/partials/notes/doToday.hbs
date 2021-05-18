@@ -2,6 +2,7 @@
     <div class="card-body">
         <h5 class="card-title">{{this.title}}</h5>
         <p>{{this.createdAt}}</p>
+        <p>{{this.status}}</p>
         <div class="d-flex">
             <a href="/drones/{{id}}/edit" class="btn btn-primary">Edit</a>
             <form action="/drones/{{id}}/delete" method="POST">
