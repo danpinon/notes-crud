@@ -21,6 +21,7 @@ router.route('/main-table')
       res.redirect('/main-table')
     })
   })
+  
 
 router.route('/new-note')
   .get((req, res, next) => res.render('new-note'))
