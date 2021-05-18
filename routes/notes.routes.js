@@ -13,17 +13,14 @@ router.route('/main-table')
     
   })
   .post((req, res, next) => {
-    const { title, content} = req.body
+    const { title, content, status} = req.body
     console.log('req.body:', req.body)
-    Note.create({title: "new note", content: "you can start writing here"})
+    Note.create({title: "new note", content: "you can start writing here", status})
     .then(() => {
       console.log('note created succesfully')
       res.redirect('/main-table')
     })
   })
-  
 
-router.route('/new-note')
-  .get((req, res, next) => res.render('new-note'))
 
 module.exports = router;

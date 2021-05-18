@@ -4,11 +4,17 @@
 <div class="d-flex flex-wrap justify-content-center">
   <div class="bg-light border rounded">
     <h1 class="text-center mt-3">To Do</h1>
+    
     {{#each notes}}
-    {{> toDo this}}
+      {{#ifEqual status 'toDo'}}
+      {{this.title}}
+        {{> toDo this}}
+      {{/ifEqual}}
     {{/each}}
+
     <div class="d-flex justify-content-center mb-3">
       <form action="/main-table" method="POST">
+        <input type="text" name="status" value="toDo">
         <button class="btn btn-primary rounded-pill" type="submit">+</button>
       </form>
     </div>
@@ -16,11 +22,17 @@
 
     <div class="bg-light border rounded">
     <h1 class="text-center mt-3">Do Today</h1>
-    {{#each notes}}
-    {{> doToday this}}
-    {{/each}}
+
+    
+      {{#each notes}}
+        {{#ifEqual status 'doToday'}}
+          {{> doToday this}}
+        {{/ifEqual}}
+      {{/each}}
+   
     <div class="d-flex justify-content-center mb-3">
       <form action="/main-table" method="POST">
+        <input type="text" name="status" value="doToday">
         <button class="btn btn-primary rounded-pill" type="submit">+</button>
       </form>
     </div>

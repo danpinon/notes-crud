@@ -12,6 +12,7 @@ const userSchema = new Schema(
     content: {
       type: String,
     },
+    status: String
   },
   {
     timestamps: true
