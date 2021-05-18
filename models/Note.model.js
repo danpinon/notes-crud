@@ -8,10 +8,10 @@ const userSchema = new Schema(
     },
     title: {
       type: String,
-      trim: true,
-      required: [true, 'Title is required.']
     },
-    content: String
+    content: {
+      type: String,
+    },
   },
   {
     timestamps: true
