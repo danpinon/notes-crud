@@ -1,28 +1,30 @@
-<div class="d-flex justify-content-center">
-  <p>new note</p>
-  <form action="/main-table" method="POST">
-    <button type="submit">+</button>
-  </form>
-</div>
+
 
 
 <div class="d-flex flex-wrap justify-content-center">
-  <div>
+  <div class="bg-light border rounded">
+    <h1 class="text-center mt-3">To Do</h1>
     {{#each notes}}
-        <div class="card m-4 border-dark" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{this.title}}</h5>
-                <p>{{this.createdAt}}</p>
-                <div class="d-flex">
-                    <a href="/drones/{{id}}/edit" class="btn btn-primary">Edit</a>
-                    <form action="/drones/{{id}}/delete" method="POST">
-                        <button class="btn btn-outline-danger">Delete</button>
-                    </form>
-                </div>
-
-            </div>
-        </div>  
+    {{> toDo this}}
     {{/each}}
+    <div class="d-flex justify-content-center mb-3">
+      <form action="/main-table" method="POST">
+        <button class="btn btn-primary rounded-pill" type="submit">+</button>
+      </form>
     </div>
+  </div>
+
+    <div class="bg-light border rounded">
+    <h1 class="text-center mt-3">Do Today</h1>
+    {{#each notes}}
+    {{> doToday this}}
+    {{/each}}
+    <div class="d-flex justify-content-center mb-3">
+      <form action="/main-table" method="POST">
+        <button class="btn btn-primary rounded-pill" type="submit">+</button>
+      </form>
+    </div>
+  </div>
+
 </div>
 
