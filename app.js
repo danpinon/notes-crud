@@ -47,6 +47,10 @@ hbs.registerHelper('ifEqual', (arg1, arg2, options) => {
   return (arg1 === arg2) ? options.fn(this) : options.inverse(this)
 })
 
+hbs.registerHelper('json', (context) => {
+  return JSON.stringify(context)
+})
+
 // default value for title local
 app.locals.title = 'Note CRUD Project';
 

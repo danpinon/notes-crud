@@ -13,7 +13,10 @@ const userSchema = new Schema(
       type: String,
     },
     status: String,
-    toDoStatus: Boolean
+    toDoBoolean: Boolean,
+    doTodayBoolean: Boolean,
+    inProgressBoolean: Boolean,
+    doneBoolean: Boolean
   },
   {
     timestamps: true
