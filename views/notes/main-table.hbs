@@ -7,7 +7,7 @@
     
     {{#each notes}}
       {{#ifEqual status 'toDo'}}
-      {{this.title}}
+      {{.}}
         {{> toDo this}}
       {{/ifEqual}}
     {{/each}}

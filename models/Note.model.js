@@ -12,7 +12,8 @@ const userSchema = new Schema(
     content: {
       type: String,
     },
-    status: String
+    status: String,
+    toDoStatus: Boolean
   },
   {
     timestamps: true

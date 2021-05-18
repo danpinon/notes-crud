@@ -44,12 +44,8 @@ hbs.registerPartials(__dirname + '/views/partials/notes')
 hbs.registerPartials(__dirname + '/views/partials/schedule')
 
 hbs.registerHelper('ifEqual', (arg1, arg2, options) => {
-  return (arg1 == arg2) ? options.fn(this) : options.inverse(this)
+  return (arg1 === arg2) ? options.fn(this) : options.inverse(this)
 })
-
-
-
-
 
 // default value for title local
 app.locals.title = 'Note CRUD Project';

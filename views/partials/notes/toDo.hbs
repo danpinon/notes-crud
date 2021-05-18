@@ -3,8 +3,8 @@
         <h5 class="card-title">{{this.title}}</h5>
         <p>{{this.createdAt}}</p>
         <div class="d-flex">
-            <a href="/drones/{{id}}/edit" class="btn btn-primary">Edit</a>
-            <form action="/drones/{{id}}/delete" method="POST">
+            <a href="/main-table/{{this._id}}/edit" class="btn btn-primary">Edit</a>
+            <form action="/main-table/{{this._id}}/delete" method="POST">
                 <button class="btn btn-outline-danger">Delete</button>
             </form>
         </div>

@@ -22,5 +22,21 @@ router.route('/main-table')
     })
   })
 
+  //deletes note
+  router.post('/main-table/:id/delete', (req, res, next) => {
+
+    const { id } = req.params
+
+  
+    Note.findByIdAndDelete(id)
+      .then(updatedNote => {
+        console.log('delete:', updatedNote)
+        res.redirect('/main-table')
+        
+      })
+      .catch(e => console.log('There was an error while deleting the drone'))
+  });
+  
+
 
 module.exports = router;
