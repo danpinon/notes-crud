@@ -13,12 +13,12 @@ router.route('/signup')
     res.render('auth/signup')
   })
   .post((req, res, next) => {
-    const { name, lastName, email, password } = req.body
+    const { username, email, password } = req.body
 
     // const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}/ // Checks that it have 7 chars or more.
 
     // Validations
-    if (!name || !lastName || !email || !password) {
+    if (!username || !email || !password) {
       res.render('auth/signup', {
         errorMessage: "All the fields must be filled."
       })
@@ -32,21 +32,13 @@ router.route('/signup')
     //   return
     // }
 
-    const accountNumber = Math.floor(100000 + Math.random() * 900000)
-
-    const profilePicture = 'https://res.cloudinary.com/dmmhvh1ai/image/upload/v1621011645/no-profile-picture_z56xhn.jpg'
-    const balance = 0
     bcrypt
       .hash(password, saltRounds)
       .then(hashedPassword => {
         return User.create({
-          name,
-          lastName,
+          username,
           email,
-          hashedPassword,
-          accountNumber,
-          profilePicture,
-          balance
+          hashedPassword
         })
       })
       .then(userFromDB => {
@@ -87,7 +79,7 @@ router.route('/login')
 
     User.findOne({ email })
       .then((userFound) => {
-        console.log('user found:',userFound._id)
+        console.log('user found:', userFound._id)
         if (!userFound) {
           res.render('auth/login', {
             errorMessage: 'The email is not registered'
@@ -95,7 +87,7 @@ router.route('/login')
           return
         } else if (bcrypt.compareSync(password, userFound.hashedPassword)) {
           req.session.currentUser = userFound
-          res.redirect(`/account/${userFound._id}`)
+          res.send(`/account/${userFound._id}`)
         } else {
           res.render('auth/login', {
             errorMessage: 'Incorrect password.'
