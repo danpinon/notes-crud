@@ -33,3 +33,11 @@ i {
   border: none;
   font-weight: bold;
 }
+
+.bg-title-hanvan {
+  background-color: rgb(225, 225, 233);
+}
+
+.width-columns{
+  width: 450px
+}

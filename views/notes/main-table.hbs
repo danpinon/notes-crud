@@ -1,29 +1,30 @@
 
 
 
-<div class="d-flex flex-wrap justify-content-center">
+<div class="d-flex flex-wrap justify-content-center m-4">
   {{!-- begining --}}
-  <div class="bg-light border rounded">
-    <h1 class="text-center mt-3">To Do</h1>
-    
-    {{#each notes}}
-      {{#if toDoBoolean}}
-        {{> note this}}
-      {{/if}}
-    {{/each}}
+  <div class="bg-light border rounded width-columns m-2">
+    <h1 class="text-center py-4 border border-secondary bg-title-hanvan rounded-top">To Do</h1>
 
+    
+      {{#each notes}}
+        {{#if toDoBoolean}}
+          {{> note this}}
+        {{/if}}
+      {{/each}}
+   
     <div class="d-flex justify-content-center mb-3">
       <form action="/main-table" method="POST">
-        <input type="text" name="status" value="toDo">
-        <button class="btn btn-primary rounded-pill" type="submit">+</button>
+        <input class="d-none" type="text" name="status" value="toDo">
+        <button class="btn btn-primary rounded-pill font-weight-bold btn-lg" type="submit">+</button>
       </form>
     </div>
   </div>
-  {{!-- end --}}
+{{!-- end --}}
 
   {{!-- begining --}}
-  <div class="bg-light border rounded">
-    <h1 class="text-center mt-3">Do Today</h1>
+  <div class="bg-light border rounded width-columns m-2">
+    <h1 class="text-center py-4 border border-secondary bg-title-hanvan rounded-top">Do Today</h1>
 
     
       {{#each notes}}
@@ -34,16 +35,16 @@
    
     <div class="d-flex justify-content-center mb-3">
       <form action="/main-table" method="POST">
-        <input type="text" name="status" value="doToday">
-        <button class="btn btn-primary rounded-pill" type="submit">+</button>
+        <input class="d-none" type="text" name="status" value="doToday">
+        <button class="btn btn-primary rounded-pill font-weight-bold btn-lg" type="submit">+</button>
       </form>
     </div>
   </div>
 {{!-- end --}}
 
 {{!-- begining --}}
-  <div class="bg-light border rounded">
-    <h1 class="text-center mt-3">In Progress</h1>
+  <div class="bg-light border rounded width-columns m-2">
+    <h1 class="text-center py-4 border border-secondary bg-title-hanvan rounded-top">In Progress</h1>
 
     
       {{#each notes}}
@@ -54,15 +55,15 @@
    
     <div class="d-flex justify-content-center mb-3">
       <form action="/main-table" method="POST">
-        <input type="text" name="status" value="inProgress">
-        <button class="btn btn-primary rounded-pill" type="submit">+</button>
+        <input class="d-none" type="text" name="status" value="inProgress">
+        <button class="btn btn-primary rounded-pill font-weight-bold btn-lg" type="submit">+</button>
       </form>
     </div>
   </div>
 {{!-- end --}}
 {{!-- begining --}}
-  <div class="bg-light border rounded">
-    <h1 class="text-center mt-3">Done</h1>
+  <div class="bg-light border rounded width-columns m-2">
+    <h1 class="text-center py-4 border border-secondary bg-title-hanvan rounded-top">Done</h1>
 
       {{#each notes}}
         {{#if doneBoolean}}
@@ -70,10 +71,10 @@
         {{/if}}
       {{/each}}
    
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex justify-content-center mb-3 width-columns">
       <form action="/main-table" method="POST">
-        <input type="text" name="status" value="done">
-        <button class="btn btn-primary rounded-pill" type="submit">+</button>
+        <input class="d-none" type="text" name="status" value="done">
+        <button class="btn btn-primary rounded-pill font-weight-bold h-6 btn-lg" type="submit">+</button>
       </form>
     </div>
   </div>
