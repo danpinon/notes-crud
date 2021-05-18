@@ -41,7 +41,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 //register partials
 hbs.registerPartials(__dirname + '/views/partials/notes')
-hbs.registerPartials(__dirname + '/views/partials/schedule')
+hbs.registerPartials(__dirname + '/views/partials/notes/subjects')
 
 
 
@@ -57,5 +57,8 @@ app.use('/', auth)
 
 const notes = require('./routes/notes.routes')
 app.use('/', notes)
+
+const schedule = require('./routes/schedule.routes')
+app.use('/', schedule)
 
 module.exports = app;

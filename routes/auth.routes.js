@@ -6,6 +6,7 @@ const saltRounds = 10
 
 const User = require('../models/User.model')
 const Note = require('../models/Note.model')
+const Subjects = require('../models/Subjects.model')
 const mongoose = require('mongoose')
 
 router.route('/signup')
