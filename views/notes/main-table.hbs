@@ -6,10 +6,9 @@
     <h1 class="text-center mt-3">To Do</h1>
     
     {{#each notes}}
-      {{#ifEqual status 'toDo'}}
-      {{.}}
+      {{#if toDoBoolean}}
         {{> toDo this}}
-      {{/ifEqual}}
+      {{/if}}
     {{/each}}
 
     <div class="d-flex justify-content-center mb-3">
@@ -25,9 +24,9 @@
 
     
       {{#each notes}}
-        {{#ifEqual status 'doToday'}}
+        {{#if doTodayBoolean}}
           {{> doToday this}}
-        {{/ifEqual}}
+        {{/if}}
       {{/each}}
    
     <div class="d-flex justify-content-center mb-3">

@@ -13,9 +13,25 @@ router.route('/main-table')
     
   })
   .post((req, res, next) => {
-    const { title, content, status} = req.body
-    console.log('req.body:', req.body)
-    Note.create({title: "new note", content: "you can start writing here", status})
+    const { status } = req.body
+    let toDoBoolean = false
+    let doTodayBoolean    = false
+    let inProgressBoolean = false
+    let doneBoolean       = false
+
+
+    if (status == 'toDo') {
+      toDoBoolean = true
+    } else if (status == 'doToday') {
+      doTodayBoolean = true
+    } else if (status == 'inProgress') {
+      inProgressBoolean = true
+    } else if (status == 'done') {
+      doneBoolean = true
+    }
+    
+    console.log('req.body:', req.body.status)
+    Note.create({title: "new note", content: "you can start writing here", status, toDoBoolean, doTodayBoolean, inProgressBoolean, doneBoolean})
     .then(() => {
       console.log('note created succesfully')
       res.redirect('/main-table')
