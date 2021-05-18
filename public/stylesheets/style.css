@@ -3,6 +3,10 @@ i {
   color: #fff;
 }
 
+.nav-link.active:hover {
+  color: #ffbe32 !important;
+}
+
 /* HOME */
 .carousel-caption {
   position: absolute;
