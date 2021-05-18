@@ -8,7 +8,7 @@ router.route('/main-table')
     Note.find()
     .then(notesFromDb => {
       console.log('notes:', notesFromDb)
-      res.render('notes/main-table',{ notes: notesFromDb})
+      res.render('notes/main-table',{ notes: notesFromDb}) 
     })
     
   })
