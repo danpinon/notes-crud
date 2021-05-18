@@ -1,7 +1,8 @@
 <div class="card m-4 border-dark" style="width: 25rem;">
     <div class="card-body">
         <h5 class="card-title">{{this.title}}</h5>
-        <p>{{this.createdAt}}</p>
+        <p>Date: {{regexDate this.createdAt}}</p>
+        <p>Time: {{regexTime this.createdAt}}</p>
         <p>{{this.status}}</p>
         <div class="d-flex">
             <a href="/main-table/{{this._id}}/edit" class="btn btn-primary">Edit</a>
