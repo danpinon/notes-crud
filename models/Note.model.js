@@ -12,6 +12,11 @@ const userSchema = new Schema(
     content: {
       type: String,
     },
+    status: String,
+    toDoBoolean: Boolean,
+    doTodayBoolean: Boolean,
+    inProgressBoolean: Boolean,
+    doneBoolean: Boolean
   },
   {
     timestamps: true

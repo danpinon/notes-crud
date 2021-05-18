@@ -43,8 +43,21 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 hbs.registerPartials(__dirname + '/views/partials/notes')
 hbs.registerPartials(__dirname + '/views/partials/notes/subjects')
 
+hbs.registerHelper('ifEqual', (arg1, arg2, options) => {
+  return (arg1 === arg2) ? options.fn(this) : options.inverse(this)
+})
 
+hbs.registerHelper('regexDate', (aString) => {
+  const expresion = /[A-Za-z]+\s\d+\s\d+/i
+  const found = aString.toString().match(expresion)
+  return found[0]
+})
 
+hbs.registerHelper('regexTime', (aString) => {
+  const expresion = /\d+:\d+:\d+/i
+  const found = aString.toString().match(expresion)
+  return found[0]
+})
 
 // default value for title local
 app.locals.title = 'Note CRUD Project';
