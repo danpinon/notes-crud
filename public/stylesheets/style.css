@@ -1,3 +1,35 @@
+/* NAVBAR */
 i {
   color: #fff;
+}
+
+/* HOME */
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 9rem;
+}
+
+.abs-pos {
+  position: absolute;
+  top: 15rem;
+  left: 0;
+  text-align: left;
+  width: 20rem;
+}
+
+.btn-info.rounded-pill {
+  padding: 10px 2em;
+  color: #fff;
+  background-color: #18BFFF;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-info.rounded-pill:hover {
+  padding: 10px 2em;
+  color: #fff;
+  background-color: #0B76B7;
+  border: none;
+  font-weight: bold;
 }
