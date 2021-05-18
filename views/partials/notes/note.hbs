@@ -1,0 +1,16 @@
+<div class="card m-4 border-dark" style="width: 18rem;">
+    <div class="card-body">
+      <div class="d-flex justify-content-between text-secondary">
+        <p class="m-0">{{regexDate this.createdAt}}</p>
+        <p class="m-0">{{regexTime this.createdAt}}</p>
+      </div>
+        <h5 class="card-title h4">{{this.title}}</h5>
+        <p>{{this.content}}</p>
+        <div class="d-flex justify-content-between">
+            <a href="/main-table/{{this._id}}/edit" class="btn btn-success">✎</a>
+            <form action="/main-table/{{this._id}}/delete" method="POST">
+                <button class="btn btn-outline-danger">🗑</button>
+            </form>
+        </div>
+    </div>
+</div>  
