@@ -9,7 +9,7 @@ router.route('/main-table/:id')
     Note.find()
     .then(notesFromDb => {
       // console.log('notes:', notesFromDb)
-      res.render(`notes/main-table`,{ notes: notesFromDb, userInSession: req.session.currentUser, userId: id }) 
+      res.render(`notes/main-table`,{ notes: notesFromDb, userInSession: req.session.currentUser, userId: id}) 
     })
     
   })
@@ -40,12 +40,24 @@ router.route('/main-table/:id')
     }
     
     // console.log('req.body:', req.body.status)
-    Note.create({title: "new note", content: "you can start writing here", status, toDoBoolean, doTodayBoolean, inProgressBoolean, doneBoolean})
+    Note.create({title: "new note", content: "you can start writing here", status, toDoBoolean, doTodayBoolean, inProgressBoolean, doneBoolean, editDisplay: false})
     .then(() => {
       // console.log('note created succesfully')
       res.redirect(`/main-table/${id}`)
     })
   })
+
+
+    router.route('/main-table/:noteId/display-edit')
+      .post((req, res, next) => {
+          const { noteId } = req.params
+          console.log('req user:', req.params)
+        Note.findByIdAndUpdate(noteId, {editDisplay: true})
+        .then(displayNote => {
+          console.log('display note:', displayNote)
+          res.redirect(`/main-table/${noteId}`)
+        })
+    })
 
     //edit note
     router.route('/main-table/:noteId/edit')
@@ -62,7 +74,7 @@ router.route('/main-table/:id')
       const { noteId } = req.params
       const { title, content } = req.body
       console.log('req user:', req.body)
-      Note.findByIdAndUpdate(noteId, {title, content}, {new: true})
+      Note.findByIdAndUpdate(noteId, {title, content, editDisplay: false}, {new: true})
       .then(updatedNote => {
         console.log('update note:', updatedNote)
         res.redirect(`/main-table/${noteId}`)
