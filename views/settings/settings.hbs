@@ -1,0 +1,20 @@
+{{#if userInSession}}
+  <h3>Update {{capitalize userInSession.username}}'s information</h3>
+
+  <form method="POST" action="/settings/{{userInSession._id}}">
+  <div class="mb-3">
+    <label for="email-input" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="email-input" placeholder="example@example.com" value="{{userInSession.email}}">
+  </div>
+  <div class="mb-3">
+    <label for="password-input" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="password-input" placeholder="••••••••">
+  </div>
+
+  <button type="submit" class="btn btn-secondary rounded-0" >Update</button>
+</form>
+{{else}}
+  <div class="alert alert-warning" role="alert">
+    You're not logged in!
+  </div>
+{{/if}}

@@ -63,6 +63,10 @@ hbs.registerHelper('regexTime', (aString) => {
   return found[0]
 })
 
+hbs.registerHelper('capitalize', (aString) => {
+  return aString.replace(/^\w/, (c) => c.toUpperCase())
+})
+
 // default value for title local
 app.locals.title = 'Note CRUD Project';
 
@@ -74,5 +78,8 @@ app.use('/', auth)
 
 const notes = require('./routes/notes.routes')
 app.use('/', notes)
+
+const settings = require('./routes/settings.routes')
+app.use('/', settings)
 
 module.exports = app;
