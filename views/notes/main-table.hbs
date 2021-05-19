@@ -1,5 +1,5 @@
 
-
+{{#if userInSession}}
 
 <div class="d-flex flex-wrap justify-content-center m-4">
   {{!-- begining --}}
@@ -14,7 +14,7 @@
       {{/each}}
    
     <div class="d-flex justify-content-center mb-3">
-      <form action="/main-table" method="POST">
+      <form action="/main-table/{{userId}}" method="POST">
         <input class="d-none" type="text" name="status" value="toDo">
         <button class="btn btn-primary rounded-pill font-weight-bold btn-lg" type="submit">+</button>
       </form>
@@ -34,7 +34,7 @@
       {{/each}}
    
     <div class="d-flex justify-content-center mb-3">
-      <form action="/main-table" method="POST">
+      <form action="/main-table/{{userId}}" method="POST">
         <input class="d-none" type="text" name="status" value="doToday">
         <button class="btn btn-primary rounded-pill font-weight-bold btn-lg" type="submit">+</button>
       </form>
@@ -54,7 +54,7 @@
       {{/each}}
    
     <div class="d-flex justify-content-center mb-3">
-      <form action="/main-table" method="POST">
+      <form action="/main-table/{{userId}}" method="POST">
         <input class="d-none" type="text" name="status" value="inProgress">
         <button class="btn btn-primary rounded-pill font-weight-bold btn-lg" type="submit">+</button>
       </form>
@@ -72,7 +72,7 @@
       {{/each}}
    
     <div class="d-flex justify-content-center mb-3 width-columns">
-      <form action="/main-table" method="POST">
+      <form action="/main-table/{{userId}}" method="POST">
         <input class="d-none" type="text" name="status" value="done">
         <button class="btn btn-primary rounded-pill font-weight-bold h-6 btn-lg" type="submit">+</button>
       </form>
@@ -80,4 +80,9 @@
   </div>
 {{!-- end --}}
 </div>
+{{else}}
+<div class="alert alert-warning" role="alert">
+  You're not logged in!
+</div>
+{{/if}}
 
