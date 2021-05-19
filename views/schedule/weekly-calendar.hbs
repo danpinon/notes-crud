@@ -1,9 +1,19 @@
+<link rel="stylesheet" href="/stylesheets/calendar-styles.css" />
+
+
 <div class="container">
+
   <h1>Select a Subject</h1>
   <div class="subject-container" >
-    {{#each subjects}}
-    <div class="subject" id="{{this.subjectName}}">{{this.subjectName}}</div>
-    {{/each}}
+
+      <div class="subject-name" id="Math" style="background-color: #f7f779;">Math</div>
+      <div class="subject-name" id="Web Fundamentals" style="background-color: #79e8f7;">Web Fundamentals</div>
+      <div class="subject-name" id="Javascript 101" style="background-color: #7b79f7;">Javascript 101</div>
+      <div class="subject-name" id="English" style="background-color: #f779dc;">English</div>
+      <div class="subject-name" id="deselect" >Deselect All</div>
+    {{!-- {{#each subjects}}
+      <div class="subject" id="{{this.subjectName}}" style="background-color: #f7f779;">{{this.subjectName}}</div>
+    {{/each}} --}}
   </div>
 
   <h3>Add selected subject to the schedule</h3>
@@ -16,13 +26,96 @@
       <div class="day">Thursday</div>
       <div class="day">Friday</div>
     </div>
+
     <div class="part-day">
-      <span class="time">8am <br> - <br> 12pm</span>
-      {{#each subjects}}
-      <div class="{{this.subjectName}}"></div>
-      {{/each}}
+      <span class="time">8am <br> - <br> 9am</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">9am <br> - <br> 10am</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">10am <br> - <br> 11am</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">11am <br> - <br> 12pm</span>
+         <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">12pm <br> - <br> 1pm</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">1pm <br> - <br> 2pm</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">2pm <br> - <br> 3pm</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">3pm <br> - <br> 4pm</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">4pm <br> - <br> 5pm</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+    <div class="part-day">
+      <span class="time">5pm <br> - <br> 6pm</span>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+        <div class="task"></div>
+    </div>
+  </div>
+    <button class="deleteBtn">Reset Schedule</button>
+    <div class="pop-up-container">
+      <h4>Are you sure yo want to delete all the Subjects from your schedule?</h4>
+      <div class="btn-container">
+        <div class="btn-answer" id="btn-yes">Yes</div>
+        <div class="btn-answer" id="btn-no">No</div>
+
+      </div>
 
     </div>
-
-  </div>
 </div>

@@ -18,6 +18,7 @@ router.route('/subjects')
       res.redirect('/subjects')
     })
   })
+//delete subjects
 
   router.post('/subjects/:id/delete',(req,res,next) => {
     const {id} = req.params
@@ -29,5 +30,11 @@ router.route('/subjects')
       .catch(e => console.log('There was an error deleting the subject'))
   })
 
+//calendar
+router.route('/calendar')
+  .get((req,res,next) => {
+
+    res.render('../views/schedule/weekly-calendar.hbs')
+  })
 
   module.exports = router
