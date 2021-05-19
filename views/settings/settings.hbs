@@ -10,8 +10,8 @@
   <div class="d-flex justify-content-center">
     <div class="card" style="width: 38rem; margin-top: 2rem;">
       <div class="card-body">
-        <h3>User information</h3>
-        <div class="settings-card">
+        <h3>User information</h3><hr>
+        <div class="settings-card border-bottom">
           <div class="d-flex">
             <h6 class="card-title p-2">Username:</h6>
             <p class="p-2">{{capitalize userData.username}}</p>
@@ -24,16 +24,18 @@
             <input type="text" value="hidden" name="userDisplayStatus" hidden>
             <button type="submit" class="btn btn-danger">Cancel</button>
           </form>
-        </div>
-        <form method="POST" action="/settings/{{userInSession._id}}/uname" {{userDisplay.content}}>
-          <div class="mb-3">
-            <label for="username-input" class="form-label">New username</label>
-            <input type="text" class="form-control" id="username-input" name="username" placeholder="new username">
-            <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
-          </div>
-        </form>
 
-        <div class="settings-card">
+          <form method="POST" action="/settings/{{userInSession._id}}/uname" {{userDisplay.content}}>
+            <div class="mb-3">
+              <label for="username-input" class="form-label">New username</label>
+              <input type="text" class="form-control" id="username-input" name="username" placeholder="new username">
+              <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
+            </div>
+          </form>
+        </div>
+        
+
+        <div class="settings-card  border-bottom" style="margin-top: 5px;">
           <div class="d-flex">
             <h6 class="card-title p-2">Email:</h6>
             <p class="p-2">{{userData.email}}</p>
@@ -46,17 +48,19 @@
             <input type="text" value="hidden" name="emailDisplayStatus" hidden>
             <button type="submit" class="btn btn-danger">Cancel</button>
           </form>
+
+          <form method="POST" action="/settings/{{userInSession._id}}/email" {{emailDisplay.content}}>
+            <div class="mb-3">
+              <label for="email-input" class="form-label">New email</label>
+              <input type="email" class="form-control" id="email-input" name="email" placeholder="example@example.com">
+              <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
+            </div>
+          </form>
           
         </div>
-        <form method="POST" action="/settings/{{userInSession._id}}/email" {{emailDisplay.content}}>
-          <div class="mb-3">
-            <label for="email-input" class="form-label">New email</label>
-            <input type="email" class="form-control" id="email-input" name="email" placeholder="example@example.com">
-            <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
-          </div>
-        </form>
+        
 
-        <div class="settings-card">
+        <div class="settings-card" style="margin-top: 5px;">
           <div class="d-flex">
             <h6 class="card-title p-2">Password:</h6>
             <p class="p-2">••••••••</p>
@@ -69,14 +73,15 @@
             <input type="text" value="hidden" name="passwordDisplayStatus" hidden>
             <button type="submit" class="btn btn-danger">Cancel</button>
           </form>
+
+          <form method="POST" action="/settings/{{userInSession._id}}/password" {{passwordDisplay.content}}>
+            <div class="mb-3">
+              <label for="password-input" class="form-label">New password</label>
+              <input type="password" class="form-control" id="password-input" name="password" placeholder="••••••••">
+              <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
+            </div>
+          </form>
         </div>
-        <form method="POST" action="/settings/{{userInSession._id}}/password" {{passwordDisplay.content}}>
-          <div class="mb-3">
-            <label for="password-input" class="form-label">New password</label>
-            <input type="password" class="form-control" id="password-input" name="password" placeholder="••••••••">
-            <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
-          </div>
-        </form>
       </div>
     </div>
   </div>
