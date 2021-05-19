@@ -1,7 +1,4 @@
 /* NAVBAR */
-i {
-  color: #fff;
-}
 
 .nav-link.active:hover {
   color: #ffbe32 !important;
@@ -44,4 +41,16 @@ i {
 
 .width-columns{
   width: 450px
+}
+
+#btn-trash{
+  color: rgb(29, 29, 29);
+}
+
+.bi-trash-fill:hover{
+  color: white;
+}
+
+#btn-trash:hover{
+  color: white
 }
