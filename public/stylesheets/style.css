@@ -57,3 +57,10 @@
 #btn-trash:hover{
   color: white
 }
+
+/* SETTINGS */
+.settings-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
