@@ -47,11 +47,32 @@ router.route('/main-table/:id')
     })
   })
 
-//deletes note
-router.post('/main-table/:id/delete', (req, res, next) => {
+    //edit note
+    router.route('/main-table/:noteId/edit')
+    // .get((req, res, next) => {
+    //   const { noteId } = req.params
+    //   console.log('edit note id:', req.params)
+    //   Note.findById(noteId)
+    //   .then(noteToEdit => {
+    //     console.log('updated Note:', noteToEdit)
+    //     res.render('notes/main-table', { note: noteToEdit, userInSession: req.session.currentUser})
+    //   })
+    // })
+    .post((req, res, next) => {
+      const { noteId } = req.params
+      const { title, content } = req.body
+      console.log('req user:', req.body)
+      Note.findByIdAndUpdate(noteId, {title, content}, {new: true})
+      .then(updatedNote => {
+        console.log('update note:', updatedNote)
+        res.redirect(`/main-table/${noteId}`)
+      })
+    })
+
+  //deletes note
+  router.post('/main-table/:id/delete', (req, res, next) => {
 
   const { id } = req.params
-
 
   Note.findByIdAndDelete(id)
     .then(updatedNote => {
