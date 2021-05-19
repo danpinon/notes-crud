@@ -46,6 +46,22 @@
   width: 450px
 }
 
+.position-relative{
+  position:relative;
+}
+.position-absolute{
+  z-index: 1;
+  position: absolute;
+  margin: auto;
+  top:10px
+  
+}
+.edit-form{
+  border-color: black;
+  background-color: blue;
+  position: fixed;
+}
+
 #btn-trash{
   color: rgb(29, 29, 29);
 }
@@ -56,4 +72,8 @@
 
 #btn-trash:hover{
   color: white
+}
+
+.bg-white{
+  background-color: white !important;
 }
