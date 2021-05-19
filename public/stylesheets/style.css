@@ -1,6 +1,6 @@
 /* NAVBAR */
 
-.nav-link.active:hover {
+.nav-link:hover {
   color: #ffbe32 !important;
 }
 
