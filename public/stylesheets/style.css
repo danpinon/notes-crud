@@ -1,6 +1,7 @@
 /* NAVBAR */
-i {
-  color: #fff;
+
+.nav-link.active:hover {
+  color: #ffbe32 !important;
 }
 
 /* HOME */
@@ -16,6 +17,9 @@ i {
   left: 0;
   text-align: left;
   width: 20rem;
+  background: rgb(0, 0, 0, 0.5);
+  padding: 1em;
+  border-radius: .25em;
 }
 
 .btn-info.rounded-pill {
@@ -32,4 +36,31 @@ i {
   background-color: #0B76B7;
   border: none;
   font-weight: bold;
+}
+
+.bg-title-hanvan {
+  background-color: rgb(225, 225, 233);
+}
+
+.width-columns{
+  width: 450px
+}
+
+#btn-trash{
+  color: rgb(29, 29, 29);
+}
+
+.bi-trash-fill:hover{
+  color: white;
+}
+
+#btn-trash:hover{
+  color: white
+}
+
+/* SETTINGS */
+.settings-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

@@ -1,0 +1,79 @@
+{{#if userInSession}}
+  <h3>{{capitalize userData.username}}'s information</h3>
+
+  {{#if errorMessage}}
+    <div class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+  {{/if}}
+
+  <div class="card " style="width: 38rem;">
+    <div class="card-body">
+      <div class="settings-card">
+        <h6 class="card-title">Username:</h6>
+        <p>{{capitalize userData.username}}</p>
+        <form method="POST" action="/settings/{{userInSession._id}}" {{userDisplay.changeButton}}>
+          <input type="text" value="" name="userDisplayStatus" hidden>
+          <button type="submit" class="btn btn-success">Change</button>
+        </form>
+        <form method="POST" action="/settings/{{userInSession._id}}" {{userDisplay.cancelButton}}>
+          <input type="text" value="hidden" name="userDisplayStatus" hidden>
+          <button type="submit" class="btn btn-danger">Cancel</button>
+        </form>
+      </div>
+      <form method="POST" action="/settings/{{userInSession._id}}/uname" {{userDisplay.content}}>
+        <div class="mb-3">
+          <label for="username-input" class="form-label">New username</label>
+          <input type="text" class="form-control" id="username-input" name="username" placeholder="new username">
+          <button type="submit" class="btn btn-secondary rounded-0" >Update</button>
+        </div>
+      </form>
+
+      <div class="settings-card">
+        <h6 class="card-title">Email:</h6>
+        <p>{{userData.email}}</p>
+        <form method="POST" action="/settings/{{userInSession._id}}" {{emailDisplay.changeButton}}>
+          <input type="text" value="" name="emailDisplayStatus" hidden>
+          <button class="btn btn-success">Change</button>
+        </form>
+        <form method="POST" action="/settings/{{userInSession._id}}" {{emailDisplay.cancelButton}}>
+          <input type="text" value="hidden" name="emailDisplayStatus" hidden>
+          <button type="submit" class="btn btn-danger">Cancel</button>
+        </form>
+        
+      </div>
+      <form method="POST" action="/settings/{{userInSession._id}}/email" {{emailDisplay.content}}>
+        <div class="mb-3">
+          <label for="email-input" class="form-label">New email</label>
+          <input type="email" class="form-control" id="email-input" name="email" placeholder="example@example.com">
+          <button type="submit" class="btn btn-secondary rounded-0" >Update</button>
+        </div>
+      </form>
+
+      <div class="settings-card">
+        <h6 class="card-title">Password:</h6>
+        <p>••••••••</p>
+        <form method="POST" action="/settings/{{userInSession._id}}" {{passwordDisplay.changeButton}}>
+          <input type="text" value="" name="passwordDisplayStatus" hidden>
+          <button class="btn btn-success">Change</button>
+        </form>
+        <form method="POST" action="/settings/{{userInSession._id}}" {{passwordDisplay.cancelButton}}>
+          <input type="text" value="hidden" name="passwordDisplayStatus" hidden>
+          <button type="submit" class="btn btn-danger">Cancel</button>
+        </form>
+      </div>
+      <form method="POST" action="/settings/{{userInSession._id}}/password" {{passwordDisplay.content}}>
+        <div class="mb-3">
+          <label for="password-input" class="form-label">New password</label>
+          <input type="password" class="form-control" id="password-input" name="password" placeholder="••••••••">
+          <button type="submit" class="btn btn-secondary rounded-0" >Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+{{else}}
+  <div class="alert alert-warning" role="alert">
+    You're not logged in!
+  </div>
+{{/if}}
