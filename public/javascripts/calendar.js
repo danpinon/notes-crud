@@ -5,7 +5,10 @@ const eng = document.getElementById('English')
 const deselect = document.getElementById('deselect')
 const subjectContainer = document.querySelector('.subject-container')
 const weeklyContainer = document.querySelector('.weekly-container')
-
+const resetBtn = document.querySelector('.deleteBtn')
+const popUp = document.querySelector('.pop-up-container')
+const yesBtn = document.getElementById('btn-yes')
+const noBtn = document.getElementById('btn-no')
 
 let selectedColor, active
 
@@ -14,6 +17,10 @@ let selectedColor, active
 subjectContainer.addEventListener('click',selectSubj)
 weeklyContainer.addEventListener('click',setColors)
 deselect.addEventListener('click',resetSubjs)
+resetBtn.addEventListener('click', openPopup)
+noBtn.addEventListener('click',closePopup)
+yesBtn.addEventListener('click', deleteSubjs)
+
 
 //subject click
 function selectSubj(e) {
@@ -74,6 +81,24 @@ function resetSubjs() {
 
   allSubjs.forEach((item) => {
     item.className = 'subject-name'
-  })
-  
+  })  
+}
+
+//DELETE SUBJECTS
+function deleteSubjs() {
+  const subjs = document.querySelectorAll('.task')
+  subjs.forEach((item) => {
+    item.innerHTML = ''
+    item.style.backgroundColor = 'white'
+  })  
+}
+
+//OPEN POP UP
+function openPopup() {
+  popUp.style.display = 'flex'  
+}
+
+//CLOSE POP UP
+function closePopup() {
+  popUp.style.display = 'none'  
 }
