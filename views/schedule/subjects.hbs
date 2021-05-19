@@ -1,8 +1,21 @@
 <div class="d-flex flex-wrap justify-content-center">
   <div class="bg-light border rounded">
-    <h1 class="text-center mt-3">Subjects</h1>>
+    <h1 class="text-center mt-3">Subjects</h1>
     {{#each subjects}}
-        {{!-- {{> subjects-card this}} --}}
+      <div class="card m-4 border-dark" style="width: 25rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{this.subjectName}}</h5>
+            <p>Teacher: {{this.teacher}}</p>
+            <p>Days: {{this.days}}</p>            
+
+            <div class="d-flex">
+            
+              <form action="/subjects/{{this._id}}/delete" method="POST">
+                  <button class="btn btn-outline-danger">Delete</button>
+              </form>
+            </div>
+        </div>
+      </div>  
     {{/each}}
     <div class="d-flex justify-content-center mb-3">
       <form action="/subjects" method="POST">

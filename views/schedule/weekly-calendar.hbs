@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Select a Subject</h1>
+  <div class="subject-container" >
+    {{#each subjects}}
+    <div class="subject" id="{{this.subjectName}}">{{this.subjectName}}</div>
+    {{/each}}
+  </div>
+
+  <h3>Add selected subject to the schedule</h3>
+  <div class="weekly-container">
+    <div class="days-container">
+      <span class="corner"></span>
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+      <div class="day">Friday</div>
+    </div>
+    <div class="part-day">
+      <span class="time">8am <br> - <br> 12pm</span>
+      {{#each subjects}}
+      <div class="{{this.subjectName}}"></div>
+      {{/each}}
+
+    </div>
+
+  </div>
+</div>

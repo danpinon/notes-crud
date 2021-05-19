@@ -41,7 +41,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 //register partials
 hbs.registerPartials(__dirname + '/views/partials/notes')
-hbs.registerPartials(__dirname + '/views/partials/notes/subjects')
+hbs.registerPartials(__dirname + '/views/partials/subjects')
 
 hbs.registerHelper('ifEqual', (arg1, arg2, options) => {
   return (arg1 === arg2) ? options.fn(this) : options.inverse(this)

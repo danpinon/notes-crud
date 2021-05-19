@@ -19,6 +19,15 @@ router.route('/subjects')
     })
   })
 
+  router.post('/subjects/:id/delete',(req,res,next) => {
+    const {id} = req.params
+    Subjects.findByIdAndDelete(id)
+      .then(updatedSubj => {
+        console.log(updatedSubj, 'Deleted')
+        res.redirect('/subjects')
+      })
+      .catch(e => console.log('There was an error deleting the subject'))
+  })
 
 
   module.exports = router
