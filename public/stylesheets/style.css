@@ -16,10 +16,10 @@ h6 {
 
 .abs-pos {
   position: absolute;
-  top: 15rem;
+  top: 12.5rem;
   left: 0;
   text-align: left;
-  width: 20rem;
+  width: 30rem;
   background: rgb(0, 0, 0, 0.5);
   padding: 1em;
   border-radius: .25em;
