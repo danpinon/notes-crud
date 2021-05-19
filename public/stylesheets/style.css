@@ -17,6 +17,9 @@
   left: 0;
   text-align: left;
   width: 20rem;
+  background: rgb(0, 0, 0, 0.5);
+  padding: 1em;
+  border-radius: .25em;
 }
 
 .btn-info.rounded-pill {
