@@ -47,6 +47,10 @@ hbs.registerHelper('ifEqual', (arg1, arg2, options) => {
   return (arg1 === arg2) ? options.fn(this) : options.inverse(this)
 })
 
+hbs.registerHelper('ifNotEqual', (arg1, arg2, options) => {
+  return (arg1 !== arg2) ? options.fn(this) : options.inverse(this)
+})
+
 hbs.registerHelper('regexDate', (aString) => {
   const expresion = /[A-Za-z]+\s\d+\s\d+/i
   const found = aString.toString().match(expresion)
@@ -54,7 +58,7 @@ hbs.registerHelper('regexDate', (aString) => {
 })
 
 hbs.registerHelper('regexTime', (aString) => {
-  const expresion = /\d+:\d+:\d+/i
+  const expresion = /\d+:\d+/i
   const found = aString.toString().match(expresion)
   return found[0]
 })
