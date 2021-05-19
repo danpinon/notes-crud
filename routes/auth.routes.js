@@ -87,7 +87,7 @@ router.route('/login')
           return
         } else if (bcrypt.compareSync(password, userFound.hashedPassword)) {
           req.session.currentUser = userFound
-          res.render(`notes/main-table`, { userInSession: req.session.currentUser })
+          res.redirect(`/main-table/${userFound._id}`)
         } else {
           res.render('auth/login', {
             errorMessage: 'Incorrect password.'
