@@ -80,13 +80,27 @@
           {{/if}}
         </ul>
         {{#if userInSession}}
+        {{!-- profile picture --}}
           <span class="navbar-text">
             <a aria-current="page" href="/settings/{{userInSession._id}}">
-              <div class="card" style="width: 2.5em; background: transparent; border: none">
-                  <img src="{{userInSession.imageUrl}}" class="rounded-circle">
+              <div class="card rounded-circle" style="
+                                                                        width: 2.5em; 
+                                                                        height:2.5em;
+                                                                        background: transparent;
+                                                                        border: none; 
+                                                                        background-image:  
+                                                                        url({{userInSession.imageUrl}}); 
+                                                                        background-size: cover; 
+                                                                        background-repeat: no-repeat; 
+                                                                        background-position: center top; 
+                                                                        background-size: cover;">
+                  <div class="pp-hover-state">
+                    <img src="/public/images/profilePictures/pp-edit-hover.jpg" alt="">
+                  </div>
               </div>
             </a>
           </span>
+          {{!-- profile picture end --}}
         {{/if}}
       </div>
     </div>

@@ -156,3 +156,9 @@ h6 {
 .btn-outline-danger:hover{
   background-color: rgb(219, 44, 82);
 }
+
+.pp-hover-state{
+  width: 100%;
+  height: 100%;
+  background-color: url('/public/images/profilePictures/pp-edit-hover.jpg');
+}
