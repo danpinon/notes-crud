@@ -40,6 +40,10 @@ const subjectSchema = new Schema(
       default: 'gray',
       enum: ['gray', 'blue', 'green', 'red','yellow','aqua'],
       required:[true],
+    },
+    editDisplay: {
+      type: Boolean,
+      default: false
     }
   },
   {

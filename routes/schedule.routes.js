@@ -14,7 +14,7 @@ router.route('/subjects/:id')
   .post((req,res,next) =>{
     const { id } = req.params
     console.log('req.body : ', req.body)
-    Subjects.create({subjectName: "Add new Subject", teacher: "Teacher name"})
+    Subjects.create({subjectName: "Add new Subject", teacher: "Teacher name", editDisplay: false})
     .then(() => {
       console.log('new subject added')
       res.redirect(`/subjects/${id}`)
@@ -22,18 +22,28 @@ router.route('/subjects/:id')
   })
 
 //edit subjects
-router.route('/subjects/:subjectId/edit')
+router.route('/subjects/:subjId/display-edit')
+  .post((req,res,next) => {
+    const {subjId} = req.params
+    console.log('req user:', req.params)
+    Subjects.findByIdAndUpdate(subjId, {editDisplay: true})
+  .then(displaySubj => {
+    console.log('display subj:', displaySubj);
+    res.redirect(`/subjects/${subjId}`)
+  })
+})
+
+router.route('/subjects/:subjId/edit')
   .post((req,res,next) =>{
     const {subjId} = req.params
     const {subjectName, teacher} = req.body
     console.log('req user' , req.body)
-    Subjects.findByIdAndUpdate(subjId, {subjectName, teacher})
+    Subjects.findByIdAndUpdate(subjId, {subjectName, teacher, editDisplay: false}, {new: true})
     .then(updatedSubj => {
       console.log('updated subj: ', updatedSubj)
       res.redirect(`/main-table/${subjId}`)
     })
   })
-
 
 //delete subjects
 
