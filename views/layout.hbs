@@ -100,9 +100,14 @@
           {{/if}}
         </ul>
         {{#if userInSession}}
-        {{!-- profile picture --}}
-          <span class="navbar-text">
-            <a aria-current="page" href="/settings/{{userInSession._id}}">
+          <span class="navbar-text d-flex">
+            <div class="p-2">
+              <a href="/settings/{{userInSession._id}}" style="text-decoration: none;" class="user-settings">
+                {{capitalize userInSession.username}}
+              </a>
+            </div>
+            <div>
+              <a aria-current="page" href="/settings/{{userInSession._id}}">
               <div class="card rounded-circle" style="
                                                                         width: 2.5em; 
                                                                         height:2.5em;
@@ -119,8 +124,8 @@
                   </div>
               </div>
             </a>
+            </div>
           </span>
-          {{!-- profile picture end --}}
         {{/if}}
       </div>
     </div>
