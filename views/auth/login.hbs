@@ -1,21 +1,23 @@
-<div id="login" class="form-container">
-  <h2>Log In</h2>
-
-  {{#if errorMessage}}
-    <div class="alert alert-danger" role="alert">
-      {{errorMessage}}
+<div id="login" class="d-flex justify-content-center">
+  <div class="card" style="width: 30rem; margin-top: 2em">
+    <div class="card-body">
+      <h2>Log In</h2>
+      <form action="/login" method="POST">
+        <div class="mb-3">
+          <label for="input-email" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="input-email" name="email" placeholder="example@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="input-password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="input-password" name="password" placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-secondary rounded-0" >Submit</button>
+      </form>
+      {{#if errorMessage}}
+        <div class="alert alert-danger" role="alert" style="margin-top: 1em;">
+          {{errorMessage}}
+        </div>
+      {{/if}}
     </div>
-  {{/if}}
-
-  <form action="/login" method="POST">
-    <div class="mb-3">
-      <label for="input-email" class="form-label">E-mail</label>
-      <input type="email" class="form-control" id="input-email" name="email" placeholder="example@example.com">
-    </div>
-    <div class="mb-3">
-      <label for="input-password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="input-password" name="password" placeholder="••••••••">
-    </div>
-    <button type="submit" class="btn btn-secondary rounded-0" >Submit</button>
-  </form>
+  </div>
 </div>

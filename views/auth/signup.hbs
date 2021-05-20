@@ -1,25 +1,27 @@
-<div id="signup" class="form-container">
-  <h2>Sigun Up</h2>
-
-  {{#if errorMessage}}
-    <div class="alert alert-danger" role="alert">
-      {{errorMessage}}
+<div id="signup" class="d-flex justify-content-center">
+  <div class="card" style="width: 30rem; margin-top: 2em">
+    <div class="card-body">
+      <h2>Sigun Up</h2>
+      <form action="/signup" method="POST">
+        <div class="mb-3">
+          <label for="input-username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="input-username" name="username" placeholder="John">
+        </div>
+        <div class="mb-3">
+          <label for="input-email" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="input-email" name="email" placeholder="example@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="input-password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="input-password" name="password" placeholder="••••••••" data-bs-toggle="tooltip" title="It should contain at leas 8 charcaters">
+        </div>
+        <button type="submit" class="btn btn-secondary rounded-0" >Create Account</button>
+      </form>
+      {{#if errorMessage}}
+        <div class="alert alert-danger" role="alert" style="margin-top: 1em">
+          {{errorMessage}}
+        </div>
+      {{/if}}
     </div>
-  {{/if}}
-
-  <form action="/signup" method="POST">
-    <div class="mb-3">
-      <label for="input-username" class="form-label">Username</label>
-      <input type="text" class="form-control" id="input-username" name="username" placeholder="John">
-    </div>
-    <div class="mb-3">
-      <label for="input-email" class="form-label">E-mail</label>
-      <input type="email" class="form-control" id="input-email" name="email" placeholder="example@example.com">
-    </div>
-    <div class="mb-3">
-      <label for="input-password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="input-password" name="password" placeholder="••••••••" data-bs-toggle="tooltip" title="It should contain at leas 8 charcaters">
-    </div>
-    <button type="submit" class="btn btn-secondary rounded-0" >Create Account</button>
-  </form>
+  </div>
 </div>

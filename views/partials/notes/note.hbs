@@ -1,58 +1,68 @@
-<div class="card m-4 border-dark" style="width: 25rem;">
+
+<div class="card m-4 border-dark shadow-sm">
+
+      {{#if editDisplay}}
+      <div class="position-relative bg-yellow">
+        <div class="border rounded position-absolute bg-yellow w-100 px-3 ">
+          <form class="d-flex flex-column"action="/main-table/{{this._id}}/edit" method="POST">
+          <label for="">Title:</label>
+          <input class="font-weight-bold h4" type="text" name="title" value="{{this.title}}">
+
+          <label for="">Content:</label>
+          <input type="text" name="content" value="{{this.content}}">
+
+          <button class="btn btn-success w-50 mt-2 mb-1 align-self-center" type="submit" >submit change</button>
+          </form>
+        </div>
+      </div>
+      {{/if}}
+
     <div class="card-body">
       <div class="d-flex justify-content-between text-secondary">
         <p class="m-0">{{regexDate this.createdAt}}</p>
         <p class="m-0">{{regexTime this.createdAt}}</p>
       </div>
-        <h5 class="card-title h4">{{this.title}}</h5>
+        <h5 class="card-title h4 d-flex flex-column">{{this.title}}</h5>
         <p>{{this.content}}</p>
-        <p>{{this.id}}</p>
+
         <div class="d-flex justify-content-between">
-          
+          <form action="/main-table/{{this._id}}/display-edit" method="POST">
+              <button type="submit"class="btn btn-success">
+                <i class="bi bi-pencil"></i>
+              </button>
+          </form>         
 
-            <button class="btn btn-success">
-              <i class="bi bi-pencil"></i>
-            </button>
-
-            <div class="btn-group" role="group" aria-label="Basic example">
-              {{#unless this.toDoBoolean}}
-                <form action="/main-table/{{this._id}}/backward" method="POST" class="backward">
-                  <input type="text" value="{{this.status}}" name="backward" hidden="true">
-                  <button type="submit" class="btn btn-outline-secondary rounded-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
-                    </svg>
-                  </button>
-                </form>
-              {{/unless}}
-              {{#unless this.doneBoolean}}
-                <form action="/main-table/{{this._id}}/foreward" method="POST" class="foreward">
-                  <input type="text" value="{{this.status}}" name="foreward" hidden="true">
-                  <button type="submit" class="btn btn-outline-secondary rounded-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                    </svg>
-                  </button>
-                </form>
-              {{/unless}}
-            </div>
-            
-            <form action="/main-table/{{this._id}}/delete" method="POST" class="trash-form">
-                <button id="btn-trash" class="btn btn-outline-danger w-100">
-                  <i class="bi bi-trash-fill"></i>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            {{#unless this.toDoBoolean}}
+              <form action="/main-table/{{this._id}}/backward" method="POST" class="backward">
+                <input type="text" value="{{this.status}}" name="backward" hidden="true">
+                <button type="submit" class="btn btn-outline-secondary rounded-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                  </svg>
                 </button>
-            </form>
-        </div>
-            <div class="border">
-              <form class="d-flex flex-column"action="/main-table/{{this._id}}/edit" method="POST">
-              <label for="">title:</label>
-              <input type="text" name="title" value="{{this.title}}">
-
-              <label for="">content:</label>
-              <input type="text" name="content" value="{{this.content}}">
-
-              <button type="submit" >submit</button>
               </form>
-            </div>
+            {{/unless}}
+            {{#unless this.doneBoolean}}
+              <form action="/main-table/{{this._id}}/foreward" method="POST" class="foreward">
+                <input type="text" value="{{this.status}}" name="foreward" hidden="true">
+                <button type="submit" class="btn btn-outline-secondary rounded-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                </button>
+              </form>
+            {{/unless}}
+          </div>
+        
+          <form action="/main-table/{{this._id}}/delete" method="POST" class="trash-form">
+              <button id="btn-trash" class="btn btn-outline-danger w-100">
+                <i class="bi bi-trash-fill"></i>
+              </button>
+          </form>
+        </div>
+      {{!-- in case i wanted to reposition de edit form place it here --}}
+
     </div>
-</div>  
+</div>
+
