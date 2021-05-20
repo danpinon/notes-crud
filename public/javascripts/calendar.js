@@ -36,7 +36,7 @@ function selectSubj(e) {
 
   switch(e.target.id){
     case 'sub-1':
-      activeSubj(sub-1, subjColor)
+      activeSubj(sub1, subjColor)
       icon = '<i class="fas fa-couch"></i>'
       break
     case 'sub-2':
@@ -76,6 +76,25 @@ function setColors(elems) {
 }
 
 
+// //SELECT LIST OF SUBJS
+function deleteSubjs() {
+  const subjs = document.querySelectorAll('.task')
+  subjs.forEach((item) => {
+    item.innerHTML = ''
+    item.style.backgroundColor = 'white'
+  })  
+}
+
+function subjList(subjs, color) {
+  const subjsList = document.querySelectorAll('.subject')
+  subjsList.forEach((item)=>{
+    if(item.classList.contains('sub-2')){
+      item.innerHTML = ''
+      item.style.backgroundColor = '#12a136'
+    }
+  })
+  
+}
 //SELECT SUBJECT
 
 function activeSubj(subj, color) {

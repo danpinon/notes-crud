@@ -7,7 +7,7 @@ router.route('/subjects/:id')
     const { id } = req.params
     Subjects.find()
     .then(subsFromDb => {
-      console.log('The subjects are: ', subsFromDb)
+      // console.log('The subjects are: ', subsFromDb)
       res.render('../views/schedule/subjects.hbs', {subjects: subsFromDb, userInSession: req.session.currentUser, userId: id})
     })
   })
@@ -41,7 +41,7 @@ router.route('/subjects/:subjId/edit')
     Subjects.findByIdAndUpdate(subjId, {subjectName, teacher, editDisplay: false}, {new: true})
     .then(updatedSubj => {
       console.log('updated subj: ', updatedSubj)
-      res.redirect(`/main-table/${subjId}`)
+      res.redirect(`/subjects/${subjId}`)
     })
   })
 

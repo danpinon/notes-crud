@@ -36,9 +36,8 @@ const subjectSchema = new Schema(
       type: String
     },
     color: {
-      type: String,
-      default: 'gray',
-      enum: ['gray', 'blue', 'green', 'red','yellow','aqua'],
+      type: Number,
+      default: 1,
       required:[true],
     },
     editDisplay: {

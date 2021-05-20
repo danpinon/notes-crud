@@ -11,10 +11,10 @@
           <div class="border rounded position-absolute bg-yellow w-100 px-3 ">
             <form class="d-flex flex-column"action="/subjects/{{this._id}}/edit" method="POST">
             <label for="">Subject:</label>
-            <input class="font-weight-bold h4" type="text" name="title" value="{{this.subjectName}}">
+            <input class="font-weight-bold h4" type="text" name="subjectName" value="{{this.subjectName}}">
 
             <label for="">Teacher:</label>
-            <input type="text" name="content" value="{{this.teacher}}">
+            <input type="text" name="teacher" value="{{this.teacher}}">
 
             <button class="btn btn-success w-50 mt-2 mb-1 align-self-center" type="submit" >submit changes</button>
             </form>
@@ -46,7 +46,7 @@
       <div class="d-flex justify-content-center mb-3 width-columns">
       
         <form action="/subjects/{{userId}}" method="POST">
-          <button class="btn btn-info rounded-pill" type="submit">+</button>
+          <button class="btn btn-primary rounded-circle button-animation button-animation" type="submit">+</button>
         </form>
 
       </div>
@@ -60,10 +60,10 @@
     <h1>Select a Subject</h1>
     <div class="subject-container" >
 
-        <div class="subject-name" id="Math" style="background-color: #f7f779;">Math</div>
+        {{!-- <div class="subject-name" id="Math" style="background-color: #12a136;">Math</div> --}}
 
       {{#each subjects}}
-        <div class="subject" id="sub-{{this.subjectNumber}}" style="background-color: #f7f779;">{{this.subjectName}}</div>
+        <div class="subject" id="sub-{{this.color}}" style="background-color: #f7f779;">{{this.subjectName}}</div>
       {{/each}}
 
         <div class="subject-name" id="deselect" >Deselect All</div>
