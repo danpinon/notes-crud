@@ -8,12 +8,14 @@ const User = require('../models/User.model')
 const Note = require('../models/Note.model')
 const Subjects = require('../models/Subjects.model')
 const mongoose = require('mongoose')
+const fileUploader = require('../config/cloudinary.config');
 
 router.route('/signup')
   .get((req, res) => {
     res.render('auth/signup')
   })
-  .post((req, res, next) => {
+
+  router.post('/signup', fileUploader.single('image'), (req, res, next) => {
     const { username, email, password } = req.body
 
     // const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}/ // Checks that it have 7 chars or more.
@@ -39,7 +41,7 @@ router.route('/signup')
         return User.create({
           username,
           email,
-          hashedPassword
+          hashedPassword,
         })
       })
       .then(userFromDB => {

@@ -51,17 +51,17 @@ h6 {
 }
 
 .width-columns{
-  width: 450px
+  width: 400px
 }
 
 .position-relative{
   position:relative;
+
 }
 .position-absolute{
   z-index: 1;
   position: absolute;
   margin: auto;
-  top:10px
   
 }
 .edit-form{
@@ -90,4 +90,32 @@ h6 {
 }
 .bg-white{
   background-color: white !important;
+}
+
+.bg-yellow{
+  background-color: rgb(252, 235, 136);
+}
+
+.bg-red{
+  background-color: rgb(255, 151, 151);
+}
+
+.bg-green{
+  background-color: rgb(131, 253, 158);
+}
+
+.bg-yellow-secondary{
+  background-color: yellow;
+}
+
+.bg-red-secondary{
+  background-color: yellow;
+}
+
+.bg-red-red{
+  background-color: yellow;
+}
+
+.border-dk{
+  border: 1px solid rgb(128, 128, 128);
 }

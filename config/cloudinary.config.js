@@ -10,7 +10,7 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
     cloudinary,
-    folder: 'folder-name',
+    folder: 'note-it',
     allowedFormats: ['jpg', 'png'],
     filename: function (req, file, cb) {
         cb(null, file.originalname)

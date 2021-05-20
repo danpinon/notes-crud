@@ -1,5 +1,21 @@
 
-<div class="card m-4 border-dark" style="width: 25rem;">
+<div class="card m-4 border-dark shadow-sm">
+
+      {{#if editDisplay}}
+      <div class="position-relative bg-yellow">
+        <div class="border rounded position-absolute bg-yellow w-100 px-3 ">
+          <form class="d-flex flex-column"action="/main-table/{{this._id}}/edit" method="POST">
+          <label for="">Title:</label>
+          <input class="font-weight-bold h4" type="text" name="title" value="{{this.title}}">
+
+          <label for="">Content:</label>
+          <input type="text" name="content" value="{{this.content}}">
+
+          <button class="btn btn-success w-50 mt-2 mb-1 align-self-center" type="submit" >submit change</button>
+          </form>
+        </div>
+      </div>
+      {{/if}}
 
     <div class="card-body">
       <div class="d-flex justify-content-between text-secondary">
@@ -46,21 +62,7 @@
           </form>
         </div>
       {{!-- in case i wanted to reposition de edit form place it here --}}
-      {{#if editDisplay}}
-      <div class="position-relativ bg-white">
-        <div class="border rounded position-absolut">
-          <form class="d-flex flex-column"action="/main-table/{{this._id}}/edit" method="POST">
-          <label for="">Title:</label>
-          <input type="text" name="title" value="{{this.title}}">
 
-          <label for="">Content:</label>
-          <input type="text" name="content" value="{{this.content}}">
-
-          <button class="btn btn-success" type="submit" >submit change</button>
-          </form>
-        </div>
-      </div>
-      {{/if}}
     </div>
 </div>
 
