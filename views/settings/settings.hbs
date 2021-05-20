@@ -82,19 +82,27 @@
           </form>
         </div>
 
-        <div class="settings-card" style="margin-top: 5px;">
+        <div class="settings-card d-flex" style="margin-top: 5px;">
           <div class="d-flex">
             <form method="POST" action="/settings/{{userInSession._id}}/profilePicture" enctype="multipart/form-data" class="p-2">
-            <div class="mb-3">
-              <label for="formFile" class="form-label"><strong>Profile Picture:</strong></label>
-              <input class="form-control" type="file" id="formFile" name="profilePicture">
-              <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
-            </div>
-          </form>
+              <div class="mb-3">
+                <label for="formFile" class="form-label"><strong>Profile Picture:</strong></label>
+                <input class="form-control" type="file" id="formFile" name="profilePicture">
+                <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
+              </div>
+            </form>
           </div>
-          
+            <div class="card rounded-circle" style="width: 10em;
+                                      height: 10em; 
+                                      background: transparent;
+                                      background-image: url({{userInSession.imageUrl}});
+                                      background-position: 100px;
+                                      background-repeat: no-repeat;
+                                      background-position: center top;
+                                      background-size: cover;
+                                      padding: 1px;">
+            </div>   
         </div>
-
       </div>
     </div>
   </div>
