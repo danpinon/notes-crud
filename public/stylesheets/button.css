@@ -1,0 +1,10 @@
+.button-animation{
+  width: 45px;
+  height: 45px;
+  transform: perspective(200px) scale(1);
+  transition: transform ease-out .2s;
+}
+
+.button-animation:hover{
+  transform: perspective(200px) scale(1.17);
+}
