@@ -1,11 +1,15 @@
 const express = require('express');
 const router  = express.Router();
+const fileUploader = require('../config/cloudinary.config');
 const User    = require('../models/User.model')
+
 
 const bcrypt = require('bcrypt')
 const saltRounds = 10
 
 /* GET home page */
+
+
 router.route('/settings/:id')
   .get((req, res, next) => {
     const { id } = req.params
