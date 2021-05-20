@@ -6,7 +6,7 @@ const Note = require('../models/Note.model')
 router.route('/main-table/:id')
   .get((req, res, next) => {
     const { id } = req.params
-    Note.find()
+    Note.find({user_id: req.session.currentUser._id.toString()})
     .then(notesFromDb => {
       res.render(`notes/main-table`,{ notes: notesFromDb, userInSession: req.session.currentUser, userId: id}) 
     })
@@ -37,9 +37,11 @@ router.route('/main-table/:id')
         console.log('Error occured on notes.routes.js')
         break
     }
+
+    const user_id = req.session.currentUser._id.toString()
     
     // console.log('req.body:', req.body.status)
-    Note.create({title: "new note", content: "you can start writing here", status, toDoBoolean, doTodayBoolean, inProgressBoolean, doneBoolean, editDisplay: false})
+    Note.create({title: "new note", content: "you can start writing here", status, toDoBoolean, doTodayBoolean, inProgressBoolean, doneBoolean, editDisplay: false, user_id})
     .then(() => {
       // console.log('note created succesfully')
       res.redirect(`/main-table/${id}`)

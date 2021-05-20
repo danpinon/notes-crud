@@ -7,9 +7,9 @@
     </div>
   {{/if}}
 
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center ">
     <div class="card" style="width: 38rem; margin-top: 2rem;">
-      <div class="card-body">
+      <div class="card-body shadow">
         <h3>User information</h3><hr>
         <div class="settings-card border-bottom">
           <div class="d-flex">
@@ -56,11 +56,10 @@
               <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
             </div>
           </form>
-          
         </div>
         
 
-        <div class="settings-card" style="margin-top: 5px;">
+        <div class="settings-card border-bottom" style="margin-top: 5px;">
           <div class="d-flex">
             <h6 class="card-title p-2">Password:</h6>
             <p class="p-2">••••••••</p>
@@ -81,6 +80,28 @@
               <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
             </div>
           </form>
+        </div>
+
+        <div class="settings-card d-flex" style="margin-top: 5px;">
+          <div class="d-flex">
+            <form method="POST" action="/settings/{{userInSession._id}}/profilePicture" enctype="multipart/form-data" class="p-2">
+              <div class="mb-3">
+                <label for="formFile" class="form-label"><strong>Profile Picture:</strong></label>
+                <input class="form-control" type="file" id="formFile" name="profilePicture">
+                <button type="submit" class="btn btn-success" style="margin-top: .5em;">Update</button>
+              </div>
+            </form>
+          </div>
+            <div class="card rounded-circle" style="width: 10em;
+                                      height: 10em; 
+                                      background: transparent;
+                                      background-image: url({{userInSession.imageUrl}});
+                                      background-position: 100px;
+                                      background-repeat: no-repeat;
+                                      background-position: center top;
+                                      background-size: cover;
+                                      padding: 1px;">
+            </div>   
         </div>
       </div>
     </div>

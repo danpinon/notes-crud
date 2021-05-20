@@ -17,7 +17,8 @@ const userSchema = new Schema(
     doTodayBoolean: Boolean,
     inProgressBoolean: Boolean,
     doneBoolean: Boolean,
-    editDisplay: Boolean
+    editDisplay: Boolean,
+    user_id: String
   },
   {
     timestamps: true

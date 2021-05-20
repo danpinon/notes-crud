@@ -1,10 +1,28 @@
+body{
+  background-color: rgb(230, 232, 235);
+}
+
 h6 {
   font-weight: bold;
 }
 /* NAVBAR */
 
+.nav-link{
+  color:rgb(255, 193, 209) !important;
+}
+
 .nav-link:hover {
-  color: #ffbe32 !important;
+  color: #ffffff !important;
+  font-weight:500;
+  
+}
+
+.user-settings {
+  color:rgb(255, 193, 209) !important;
+}
+
+.user-settings:hover {
+  color: #ffffff !important;
 }
 
 .navbar {
@@ -93,29 +111,78 @@ h6 {
 }
 
 .bg-yellow{
-  background-color: rgb(252, 235, 136);
+  background-color: rgb(245, 235, 178);
 }
 
 .bg-red{
-  background-color: rgb(255, 151, 151);
+  background-color: rgb(245, 188, 200);
 }
 
 .bg-green{
-  background-color: rgb(131, 253, 158);
+  background-color: rgb(179, 255, 195);
 }
 
-.bg-yellow-secondary{
+.bg-yellow-primary{
   background-color: yellow;
 }
 
-.bg-red-secondary{
+.bg-red-primary{
   background-color: yellow;
 }
 
-.bg-red-red{
-  background-color: yellow;
+.bg-red-primary{
+  background-color: rgb(226, 48, 92);
 }
 
 .border-dk{
   border: 1px solid rgb(128, 128, 128);
+}
+
+.btn-primary{
+  background-color: rgb(49, 189, 253);
+  border: none;
+}
+
+.btn-primary:hover{
+  background-color: rgb(39, 163, 235);
+  border: none;
+}
+
+.btn-success{
+  background-color: rgb(30, 168, 30);
+  border: rgb(30, 168, 30) 1px solid;
+}
+.btn-success:hover{
+  background-color: rgb(0, 128, 0);
+  border: rgb(0, 128, 0) 1px solid;
+}
+
+.btn-outline-danger{
+  border: rgb(219, 44, 82) 1px solid;
+}
+
+.btn-outline-danger:hover{
+  background-color: rgb(219, 44, 82);
+}
+
+.pp-hover-state{
+  width: 2.5em; 
+  height:2.5em;
+  
+
+}
+
+.pp-hover-state:hover{
+  background-color: rgb(207, 207, 207);
+  opacity: .5;
+  
+}
+
+.index{
+z-index: 1;
+}
+
+.icon-position{
+  right: 19px;
+  top: 11px;
 }
