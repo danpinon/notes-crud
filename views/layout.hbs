@@ -102,21 +102,21 @@
         {{#if userInSession}}
         {{!-- profile picture --}}
           <span class="navbar-text">
-            <a aria-current="page" href="/settings/{{userInSession._id}}">
-              <div class="card rounded-circle" style="
-                                                                        width: 2.5em; 
-                                                                        height:2.5em;
-                                                                        background: transparent;
-                                                                        border: none; 
-                                                                        background-image:  
-                                                                        url({{userInSession.imageUrl}}); 
-                                                                        background-size: cover; 
-                                                                        background-repeat: no-repeat; 
-                                                                        background-position: center top; 
-                                                                        background-size: cover;">
-                  <div class="pp-hover-state">
-                    <img src="/public/images/profilePictures/pp-edit-hover.jpg" alt="">
-                  </div>
+            <a aria-current="page" href="/settings/{{userInSession._id}}"> 
+              <i class="icon-position position-absolute bi bi-pencil-fill"></i>
+              <div class="pp-hover-state rounded-circle position-relative">
+                <div id="pp"class="card rounded-circle position-absolute" style="
+                                                                          width: 2.5em; 
+                                                                          height:2.5em;
+                                                                          background: transparent;
+                                                                          border: none; 
+                                                                          background-image:  
+                                                                          url({{userInSession.imageUrl}}); 
+                                                                          background-size: cover; 
+                                                                          background-repeat: no-repeat; 
+                                                                          background-position: center top; 
+                                                                          background-size: cover;">
+                </div>
               </div>
             </a>
           </span>
