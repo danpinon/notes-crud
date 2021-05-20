@@ -24,7 +24,7 @@ const userSchema = new Schema(
     notes: [],
     imageUrl: {
       type: String,
-      default: 'https://res.cloudinary.com/dmmhvh1ai/image/upload/v1621011645/no-profile-picture_z56xhn.jpg'
+      default: '/images/profilePictures/no-pp.jpg'
     }
   },
   {

@@ -56,11 +56,10 @@
               <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
             </div>
           </form>
-          
         </div>
         
 
-        <div class="settings-card" style="margin-top: 5px;">
+        <div class="settings-card border-bottom" style="margin-top: 5px;">
           <div class="d-flex">
             <h6 class="card-title p-2">Password:</h6>
             <p class="p-2">••••••••</p>
@@ -82,6 +81,20 @@
             </div>
           </form>
         </div>
+
+        <div class="settings-card" style="margin-top: 5px;">
+          <div class="d-flex">
+            <form method="POST" action="/settings/{{userInSession._id}}/profilePicture" enctype="multipart/form-data" class="p-2">
+            <div class="mb-3">
+              <label for="formFile" class="form-label"><strong>Profile Picture:</strong></label>
+              <input class="form-control" type="file" id="formFile" name="profilePicture">
+              <button type="submit" class="btn btn-outline-dark" style="margin-top: .5em;">Update</button>
+            </div>
+          </form>
+          </div>
+          
+        </div>
+
       </div>
     </div>
   </div>

@@ -1,11 +1,12 @@
-const express = require('express');
-const router  = express.Router();
+const express      = require('express');
+const router       = express.Router();
 const fileUploader = require('../config/cloudinary.config');
-const User    = require('../models/User.model')
+const User         = require('../models/User.model')
+const Picture      = require('../models/Picture.model')
+const multer       = require('multer');
 
-
-const bcrypt = require('bcrypt')
-const saltRounds = 10
+const bcrypt       = require('bcrypt')
+const saltRounds   = 10
 
 /* GET home page */
 
@@ -156,6 +157,38 @@ router.post('/settings/:id/password', (req, res, next) => {
       .catch(error => {
         console.log(error)
       })
+})
+
+const upload = multer({ dest: './public/images/profilePictures'})
+router.post('/settings/:id/profilePicture', upload.single('profilePicture'), (req, res, next) => {
+  const { id } = req.params
+
+  console.log('-----------------')
+  console.log(req.body)
+  console.log(req.file)
+  console.log('-------------------')
+
+  const picture = new Picture({
+    name: req.file.originalname,
+    path: `/images/profilePictures/${req.file.filename}`,
+    originalname: req.body.originalname
+  })
+
+  const imageUrl = `/images/profilePictures/${req.file.filename}`
+
+  picture
+    .save()
+    .then(() => {
+      req.session.currentUser.imageUrl = imageUrl
+      return User.findByIdAndUpdate(id, { imageUrl }, { new: true })
+    })
+    .then(() => {
+      res.redirect(`/settings/${id}`)
+    })
+    .catch(err => {
+      next(err)
+    })
+
 })
 
 module.exports = router;

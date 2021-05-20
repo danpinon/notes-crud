@@ -80,9 +80,9 @@
         </ul>
         {{#if userInSession}}
           <span class="navbar-text">
-            <a class="nav-link" aria-current="page" href="/settings/{{userInSession._id}}">
+            <a aria-current="page" href="/settings/{{userInSession._id}}">
               <div class="card" style="width: 2.5em; background: transparent; border: none">
-                  <img src="https://res.cloudinary.com/dmmhvh1ai/image/upload/v1621011645/no-profile-picture_z56xhn.jpg" class="rounded-circle">
+                  <img src="{{userInSession.imageUrl}}" class="rounded-circle">
               </div>
             </a>
           </span>
