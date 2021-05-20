@@ -34,13 +34,12 @@
   <div class="subject-container" >
 
       <div class="subject-name" id="Math" style="background-color: #f7f779;">Math</div>
-      <div class="subject-name" id="Web Fundamentals" style="background-color: #79e8f7;">Web Fundamentals</div>
-      <div class="subject-name" id="Javascript 101" style="background-color: #7b79f7;">Javascript 101</div>
-      <div class="subject-name" id="English" style="background-color: #f779dc;">English</div>
+
+    {{#each subjects}}
+      <div class="subject" id="sub-{{this.subjectNumber}}" style="background-color: #f7f779;">{{this.subjectName}}</div>
+    {{/each}}
+
       <div class="subject-name" id="deselect" >Deselect All</div>
-    {{!-- {{#each subjects}}
-      <div class="subject" id="{{this.subjectName}}" style="background-color: #f7f779;">{{this.subjectName}}</div>
-    {{/each}} --}}
   </div>
 
   <h3>Add selected subject to the schedule</h3>

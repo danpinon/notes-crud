@@ -1,7 +1,13 @@
-const math = document.getElementById('Math')
-const web = document.getElementById('Web Fundamentals')
-const java = document.getElementById('Javascript 101')
-const eng = document.getElementById('English')
+//SELECT SUBJECTS BY A NUMBER
+
+
+const sub1 = document.getElementById('sub-1')
+const sub2 = document.getElementById('sub-2')
+const sub3 = document.getElementById('sub-3')
+const sub4 = document.getElementById('sub-4')
+const sub5 = document.getElementById('sub-5')
+const sub6 = document.getElementById('sub-6')
+const sub7 = document.getElementById('sub-7')
 const deselect = document.getElementById('deselect')
 const subjectContainer = document.querySelector('.subject-container')
 const weeklyContainer = document.querySelector('.weekly-container')
@@ -29,21 +35,33 @@ function selectSubj(e) {
   subjColor = e.target.style.backgroundColor
 
   switch(e.target.id){
-    case 'Math':
-      activeSubj(math, subjColor)
+    case 'sub-1':
+      activeSubj(sub-1, subjColor)
       icon = '<i class="fas fa-couch"></i>'
       break
-    case 'Web Fundamentals':
-      activeSubj(web, subjColor)
+    case 'sub-2':
+      activeSubj(sub2, subjColor)
       icon = '<i class="fas fa-dumbbell"></i>'
       break
-    case 'Javascript 101':
-      activeSubj(java, subjColor)
+    case 'sub-3':
+      activeSubj(sub3, subjColor)
       icon = '<i class="fas fa-book"></i>'
       break
-    case 'English':
-      activeSubj(eng, subjColor)
+    case 'sub-4':
+      activeSubj(sub4, subjColor)
       icon = '<i class="fas fa-tv"></i>'
+      break
+    case 'sub-5':
+      activeSubj(sub5, subjColor)
+      icon = '<i class="fas fa-apple-alt"></i>'
+      break
+    case 'sub-6':
+      activeSubj(sub6, subjColor)
+      icon = '<i class="fas fa-atom"></i>'
+      break
+    case 'sub-7':
+      activeSubj(sub7, subjColor)
+      icon = '<i class="fas fa-baseball-ball"></i>'
       break
   }  
 }
