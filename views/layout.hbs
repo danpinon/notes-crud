@@ -101,8 +101,15 @@
         </ul>
         {{#if userInSession}}
         {{!-- profile picture --}}
-          <span class="navbar-text">
-            <a aria-current="page" href="/settings/{{userInSession._id}}"> 
+          <span class="navbar-text d-flex">
+             <div class="p-2">
+              <a href="/settings/{{userInSession._id}}" style="text-decoration: none;" class="user-settings">
+                {{capitalize userInSession.username}}
+              </a>
+            </div>
+            <div>
+              <a href="/settings/{{userInSession._id}}" style="text-decoration: none;" class="user-settings">
+
               <i class="icon-position position-absolute bi bi-pencil-fill"></i>
               <div class="pp-hover-state rounded-circle position-relative">
                 <div id="pp"class="card rounded-circle position-absolute" style="
@@ -118,9 +125,10 @@
                                                                           background-size: cover;">
                 </div>
               </div>
-            </a>
+              </a>            
+            </div>
+            </div>
           </span>
-          {{!-- profile picture end --}}
         {{/if}}
       </div>
     </div>
