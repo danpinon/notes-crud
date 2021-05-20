@@ -17,6 +17,14 @@ h6 {
   
 }
 
+.user-settings {
+  color:rgb(255, 193, 209) !important;
+}
+
+.user-settings:hover {
+  color: #ffffff !important;
+}
+
 .navbar {
   padding-top: .1px !important; 
   padding-bottom: .1px !important;

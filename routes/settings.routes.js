@@ -110,6 +110,7 @@ router.post('/settings/:id/uname', (req, res, next) => {
     return
   }
 
+  req.session.currentUser.username = username
   User.findByIdAndUpdate(id, { username }, { new: true })
     .then(() => res.redirect(`/settings/${id}`))
 })
