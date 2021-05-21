@@ -8,3 +8,12 @@
 .button-animation:hover{
   transform: perspective(200px) scale(1.17);
 }
+
+.card-animation{
+  transform: perspective(200px) scale(1);
+  transition: transform ease-out .1s;
+}
+
+.card-animation:hover{
+  transform: perspective(200px) scale(1.015);
+}

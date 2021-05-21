@@ -186,3 +186,19 @@ z-index: 1;
   right: 19px;
   top: 11px;
 }
+
+.round-arrow-left{
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  position: relative;
+  left: 1px;
+}
+
+.round-arrow-right{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
