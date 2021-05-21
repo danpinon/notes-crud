@@ -1,17 +1,17 @@
 {{#if userInSession}}
-<div class="home-bg-image-logged">
+<div class="home-bg-image">
 
 </div>
 
 {{else}}
 <div class="home-bg-image">
-
-  <div class="get-started">
-    {{!-- <h1 class="font-futura-bold">Own your workflow</h1>
-    <p class="font-roboto-medium">One tool for all your study.</p> --}}
-    <a class="btn btn-primary rounded-pill hover-animation w-100 h-100 font-roboto-regular d-flex justify-content-center align-items-center"href="/signup">Get Started ></a>
+  <div class='start-box'>
+    <h1 class="font-bold">Own your workflow</h1>
+    <p class="font-regular">One tool for all your study.</p>
+    <div class="get-started">
+      <a class="btn btn-primary rounded-pill hover-animation w-100 h-100 font-roboto-regular d-flex justify-content-center align-items-center"href="/signup">Get Started ></a>
+    </div>
   </div>
-
 </div>
 
 {{/if}}
