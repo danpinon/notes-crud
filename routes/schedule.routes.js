@@ -54,6 +54,9 @@ router.route('/subjects/:subjId/edit')
         console.log(updatedSubj, 'Deleted')
         res.redirect(`/subjects/${id}`)
       })
+      .then(()=>{
+        
+      })
       .catch(e => console.log('There was an error deleting the subject'))
   })
 

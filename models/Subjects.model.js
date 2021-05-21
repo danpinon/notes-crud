@@ -1,4 +1,5 @@
 const mongoose = require ('mongoose')
+const autoincrement = require('mongoose-sequence')(mongoose)
 const {Schema, model} = mongoose
 
 const subjectSchema = new Schema(
@@ -49,5 +50,5 @@ const subjectSchema = new Schema(
     timestamps: true
   }
 )
-
+subjectSchema.plugin(autoincrement,{inc_field: 'color'})
 module.exports = model('Subjects', subjectSchema)

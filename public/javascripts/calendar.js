@@ -27,6 +27,18 @@ resetBtn.addEventListener('click', openPopup)
 noBtn.addEventListener('click',closePopup)
 yesBtn.addEventListener('click', deleteSubjs)
 
+let colors = ['#b3ffc3', '#e6e8eb', '#ffc1d1', '#c6bcf5','#b7dd85','#4293ac','#ca9c60','#97d1a9','#5b97e6'];
+let random_color = colors[Math.floor(Math.random() * colors.length)];
+document.getElementById('sub-1').style.backgroundColor = colors[0];
+document.getElementById('sub-2').style.backgroundColor = colors[1];
+document.getElementById('sub-3').style.backgroundColor = colors[2];
+document.getElementById('sub-4').style.backgroundColor = colors[3];
+document.getElementById('sub-5').style.backgroundColor = colors[4];
+document.getElementById('sub-6').style.backgroundColor = colors[5];
+document.getElementById('sub-7').style.backgroundColor = colors[6];
+document.getElementById('sub-8').style.backgroundColor = colors[7];
+document.getElementById('sub-9').style.backgroundColor = colors[8];
+document.getElementById('sub-10').style.backgroundColor = colors[9];
 
 //subject click
 function selectSubj(e) {
@@ -38,6 +50,9 @@ function selectSubj(e) {
     case 'sub-1':
       activeSubj(sub1, subjColor)
       icon = '<i class="fas fa-couch"></i>'
+      document.getElementsByClassName('subject-name').style.color = random_color
+      // document.getElementById('sub-1').style.backgroundColor = '#e6e8eb';
+
       break
     case 'sub-2':
       activeSubj(sub2, subjColor)
@@ -126,7 +141,7 @@ function deleteSubjs() {
   const subjs = document.querySelectorAll('.task')
   subjs.forEach((item) => {
     item.innerHTML = ''
-    item.style.backgroundColor = 'white'
+    item.style.backgroundColor = 'rgb(245, 235, 178)'
   })  
 }
 

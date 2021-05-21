@@ -25,7 +25,7 @@
           <div class="card-body">
               <h5 class="card-title">{{this.subjectName}}</h5>
               <p>Teacher: {{this.teacher}}</p>
-              <p>Days: {{this.days}}</p>            
+              <p>No: {{this.color}}</p>            
 
               <div class="d-flex justify-content-between">
                 <form action="/subjects/{{this._id}}/display-edit" method="POST">
@@ -54,16 +54,17 @@
     </div>
   <link rel="stylesheet" href="/stylesheets/calendar-styles.css" />
 
+  <div class="d-flex flex-wrap justify-content-center">
+    <div class="bg-light border rounded">
+      <h1 class="text-center mt-3">Select a Subject</h1>
+      <div class="container">
 
-  <div class="container">
-
-    <h1>Select a Subject</h1>
     <div class="subject-container" >
 
         {{!-- <div class="subject-name" id="Math" style="background-color: #12a136;">Math</div> --}}
 
       {{#each subjects}}
-        <div class="subject" id="sub-{{this.color}}" style="background-color: #f7f779;">{{this.subjectName}}</div>
+        <div class="subject-name" id="sub-{{this.color}}" style="background-color: #f7f779;">{{this.subjectName}}</div>
       {{/each}}
 
         <div class="subject-name" id="deselect" >Deselect All</div>
@@ -72,16 +73,25 @@
     <h3>Add selected subject to the schedule</h3>
     <div class="weekly-container">
       <div class="days-container">
+        
+
         <span class="corner"></span>
-        <div class="day">Monday</div>
-        <div class="day">Tuesday</div>
-        <div class="day">Wednesday</div>
-        <div class="day">Thursday</div>
-        <div class="day">Friday</div>
+
+        
+          
+
+            <div class="day">Monday</div>
+            <div class="day">Tuesday</div>
+            <div class="day">Wednesday</div>
+            <div class="day">Thursday</div>
+            <div class="day">Friday</div>
+          
+
+        
       </div>
 
       <div class="part-day">
-        <span class="time">8am <br> - <br> 9am</span>
+        <span class="time">8am <br>-<br> 9am</span>
           <div class="task"></div>
           <div class="task"></div>
           <div class="task"></div>
@@ -171,6 +181,8 @@
         </div>
         </div>
 
+      </div>
+  </div>
       </div>
   </div>
 
