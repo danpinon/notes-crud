@@ -27,7 +27,7 @@ resetBtn.addEventListener('click', openPopup)
 noBtn.addEventListener('click',closePopup)
 yesBtn.addEventListener('click', deleteSubjs)
 
-let colors = ['#b3ffc3', '#e6e8eb', '#ffc1d1', '#c6bcf5','#b7dd85','#4293ac','#ca9c60','#97d1a9','#5b97e6'];
+let colors = ['#b3ffc3', '#e6e8eb', '#53d8b0', '#c6bcf5','#b7dd85','#4293ac','#ca9c60','#97d1a9','#5b97e6'];
 let random_color = colors[Math.floor(Math.random() * colors.length)];
 document.getElementById('sub-1').style.backgroundColor = colors[0];
 document.getElementById('sub-2').style.backgroundColor = colors[1];

@@ -50,5 +50,5 @@ const subjectSchema = new Schema(
     timestamps: true
   }
 )
-subjectSchema.plugin(autoincrement,{inc_field: 'color'})
+// subjectSchema.plugin(autoincrement,{inc_field: 'color'})
 module.exports = model('Subjects', subjectSchema)
