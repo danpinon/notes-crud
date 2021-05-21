@@ -14,7 +14,7 @@
     "cloudinary": "^1.25.1",
     "connect-mongo": "^4.4.1",
     "cookie-parser": "^1.4.3",
-    "dotenv": "^6.0.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.3",
     "express-session": "^1.17.1",
     "hbs": "^4.0.1",
@@ -28,5 +28,8 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
+  },
+  "engines": {
+    "node": "14.16.0"
   }
 }

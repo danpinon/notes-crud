@@ -18,7 +18,7 @@ router.route('/signup')
   router.post('/signup', fileUploader.single('image'), (req, res, next) => {
     const { username, email, password } = req.body
 
-    // const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}/ // Checks that it have 7 chars or more.
+    const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}/ // Checks that it have 7 chars or more.
 
     // Validations
     if (!username || !email || !password) {
@@ -28,12 +28,12 @@ router.route('/signup')
       return
     }
 
-    // if (!regex.test(password)) {
-    //   res.status(500).render('auth/signup', {
-    //     errorMessage: 'The password must have at least 8 characters'
-    //   })
-    //   return
-    // }
+    if (!regex.test(password)) {
+      res.status(500).render('auth/signup', {
+        errorMessage: 'The password must have at least 8 characters'
+      })
+      return
+    }
 
     bcrypt
       .hash(password, saltRounds)
@@ -85,7 +85,7 @@ router.route('/login')
         console.log('user found:', userFound._id)
         if (!userFound) {
           res.render('auth/login', {
-            errorMessage: 'The email is not registered'
+            errorMessage: 'Invalid username or password'
           })
           return
         } else if (bcrypt.compareSync(password, userFound.hashedPassword)) {
@@ -93,11 +93,13 @@ router.route('/login')
           res.redirect(`/main-table/${userFound._id}`)
         } else {
           res.render('auth/login', {
-            errorMessage: 'Incorrect password.'
+            errorMessage: 'Invalid username or password'
           })
         }
       })
-      .catch(error => next(error))
+      .catch(error => {
+        res.render('auth/login', {errorMessage: 'Invalid username or password'})
+       })
   })
 
 router.post('/logout', (req, res) => {
