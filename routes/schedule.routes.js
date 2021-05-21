@@ -13,8 +13,9 @@ router.route('/subjects/:id')
   })
   .post((req,res,next) =>{
     const { id } = req.params
+    let random = Math.floor(Math.random() * 11)
     console.log('req.body : ', req.body)
-    Subjects.create({subjectName: "Add new Subject", teacher: "Teacher name", editDisplay: false})
+    Subjects.create({subjectName: "Add new Subject", teacher: "Teacher name",color: random, editDisplay: false})
     .then(() => {
       console.log('new subject added')
       res.redirect(`/subjects/${id}`)

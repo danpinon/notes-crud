@@ -15,7 +15,7 @@ body{
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -25,7 +25,7 @@ h1,h3{
 
 .subject-container{
   display: flex;
-  margin-bottom: 3rem;
+  margin-bottom: 20px;
   padding: 10px;
 }
 
@@ -41,8 +41,8 @@ h1,h3{
 }
 
 #deselect{
-  background-color: gray;
-  color: white;
+  background-color: rgba(138, 138, 138, 0.335);
+  color: black;
 }
 
 /*SCHEDULE DESIGN*/
@@ -87,7 +87,7 @@ h1,h3{
   width: 400px;
   height: 50px;
   color: #212529;
-  background-color:rgb(245, 188, 200);
+  background-color:#f5bcc8;
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
@@ -108,11 +108,12 @@ h1,h3{
 .time{
   width: 150px;
   height: 70px;
-  padding: 10px;
+  padding: 20px;
   color:black;
   background-color: rgba(138, 138, 138, 0.335);
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 5px;
@@ -122,7 +123,8 @@ h1,h3{
 
 .task{
   color: #212529;
-  background-color: rgb(245, 235, 178);
+  /* background-color: rgb(245, 235, 178); */
+  background-color: white;
   width: 400px;
   margin: 2px;
   cursor: pointer;
@@ -131,12 +133,12 @@ h1,h3{
   align-items: center;
   font-size: 2rem;
   border-radius: 10px;
+  border: rgb(190, 190, 190) 1px solid;
 }
 
 /*RESET BUTTONS*/
 .deleteBtn{
   padding: 10px 25px;
-  margin-top: 20px;
   border: none;
   background-color: white;
   border: solid 2px black;
@@ -144,6 +146,11 @@ h1,h3{
   cursor: pointer;
   text-transform: uppercase;
   outline: none;
+}
+
+.add-selected{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .deleteBtn:hover{
@@ -166,16 +173,16 @@ h1,h3{
 }
 
 .pop-up{
-  width: 300px;
+  width: 400px;
   height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #00b4d8;
+  background-color: #f8f9fa;
   padding: 15px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .btn-container{
@@ -186,7 +193,7 @@ h1,h3{
 
 .btn-answer{
   margin: 0 20px;
-  background-color: white;
+  background-color: rgba(138, 138, 138, 0.335);
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
