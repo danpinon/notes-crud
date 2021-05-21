@@ -8,7 +8,6 @@ router.route('/main-table/:id')
     const { id } = req.params
     Note.find({user_id: req.session.currentUser._id.toString()})
     .then(notesFromDb => {
-      // console.log('notes:', notesFromDb)
       res.render(`notes/main-table`,{ notes: notesFromDb, userInSession: req.session.currentUser, userId: id}) 
     })
     
