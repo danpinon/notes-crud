@@ -50,9 +50,6 @@ function selectSubj(e) {
     case 'sub-1':
       activeSubj(sub1, subjColor)
       icon = '<i class="fas fa-couch"></i>'
-      document.getElementsByClassName('subject-name').style.color = random_color
-      // document.getElementById('sub-1').style.backgroundColor = '#e6e8eb';
-
       break
     case 'sub-2':
       activeSubj(sub2, subjColor)
@@ -141,7 +138,7 @@ function deleteSubjs() {
   const subjs = document.querySelectorAll('.task')
   subjs.forEach((item) => {
     item.innerHTML = ''
-    item.style.backgroundColor = 'rgb(245, 235, 178)'
+    item.style.backgroundColor = 'white'
   })  
 }
 
