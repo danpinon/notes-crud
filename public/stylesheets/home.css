@@ -1,0 +1,53 @@
+
+
+.home-bg-image{
+  background-image: url('/images/profilePictures/illustration-1-home.png');
+  width: 100%;
+  height: 850px;
+  background-position: -300px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-color: rgb(247, 247, 247);
+  /* opacity: .2; */
+  
+}
+
+.home-bg-image-logged{
+  background-image: url('/images/profilePictures/illustration-1-layout.png');
+  width: 100%;
+  height: 850px;
+  background-position: -300px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-color: rgb(247, 247, 247);
+}
+
+.get-started{
+  width: 323px;
+  height: 90px;
+
+  position: relative;
+  top: 568px;
+  left: 53.5%;
+
+}
+
+.font-roboto-regular{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.bg-note-it{
+  width: 100%;
+  height: 850px;
+  background-image: url('/images/profilePictures/bg-note-it.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+
+

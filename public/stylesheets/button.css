@@ -15,5 +15,14 @@
 }
 
 .card-animation:hover{
-  transform: perspective(200px) scale(1.015);
+  transform: perspective(200px) scale(1.010);
+}
+
+.hover-animation{
+  transform: perspective(200px) scale(1);
+  transition: transform ease-out .2s;
+}
+
+.hover-animation:hover{
+  transform: perspective(200px) scale(1.02);
 }

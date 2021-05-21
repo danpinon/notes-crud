@@ -202,3 +202,8 @@ z-index: 1;
   border-top-right-radius: 18px;
   border-bottom-right-radius: 18px;
 }
+
+.logo-size{
+  width: auto;
+  height: 2em;
+}
